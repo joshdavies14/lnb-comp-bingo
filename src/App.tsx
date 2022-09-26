@@ -5,6 +5,11 @@ import Grid from './components/grid/Grid'
 import { InfoModal } from './components/modals/InfoModal'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
+    WIN_MESSAGES,
+    GAME_COPIED_MESSAGE,
+    DISCOURAGE_INAPP_BROWSER_TEXT,
+  } from './constants/strings'
+import {
     loadGameStateFromLocalStorage,
     saveGameStateToLocalStorage,
     setStoredIsHighContrastMode,
@@ -21,6 +26,7 @@ import './App.css';
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
+import { isInAppBrowser } from './lib/browser'
 
 type ClickHandler<T> = (event: MouseEvent<T>) => void;
 type CellClickHandler = ClickHandler<HTMLTableDataCellElement>;
@@ -33,6 +39,8 @@ function App() {
         '(prefers-color-scheme: dark)'
     ).matches
 
+    const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
+        useAlert()
     const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
     const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
 
@@ -56,6 +64,15 @@ function App() {
             }, WELCOME_INFO_MODAL_MS)
         }
     })
+
+    useEffect(() => {
+        DISCOURAGE_INAPP_BROWSERS &&
+            isInAppBrowser() &&
+            showErrorAlert(DISCOURAGE_INAPP_BROWSER_TEXT, {
+                persist: false,
+                durationMs: 7000,
+            })
+    }, [showErrorAlert])
 
     useEffect(() => {
         if (isDarkMode) {
