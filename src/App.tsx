@@ -55,7 +55,7 @@ function App() {
         getStoredIsHighContrastMode()
     )
 
-    useEffect(() => {
+    /* useEffect(() => {
         // if no game state on load,
         // show the user the how-to info modal
         if (!loadGameStateFromLocalStorage()) {
@@ -63,7 +63,7 @@ function App() {
                 setIsInfoModalOpen(true)
             }, WELCOME_INFO_MODAL_MS)
         }
-    })
+    }) */
 
     useEffect(() => {
         DISCOURAGE_INAPP_BROWSERS &&
