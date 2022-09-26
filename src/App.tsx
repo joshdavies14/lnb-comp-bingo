@@ -152,17 +152,21 @@ function App() {
             />
             <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
                 <div className="pb-6 grow">
+                    <div className="columns-2 pb-6">
+                        <ActionButton
+                            text="New card"
+                            onClick={setNewWords}
+                            activeDuration={100}
+                        />
+                        <ActionButton
+                            text="Clear"
+                            onClick={clearAllCells}
+                            activeDuration={100}
+                        />
+                    </div>
+
                     {/* Insert grid here */}
-                    <ActionButton
-                        text="New card"
-                        onClick={setNewWords}
-                        activeDuration={100}
-                    />
-                    <ActionButton
-                        text="Clear"
-                        onClick={clearAllCells}
-                        activeDuration={100}
-                    />
+
                     <Grid cellPropsList={cellPropsList} />
                 </div>
                 <InfoModal
