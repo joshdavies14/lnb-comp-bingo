@@ -3,7 +3,7 @@ import "./Cell.css";
 import classNames from "classnames";
 import { CellProps } from "../../App";
 
-const Cell: React.FC<CellProps> = ({ word, stamped, toggleStamped }) => {
+const Cell: React.FC<CellProps> = ({ prompt, stamped, toggleStamped }) => {
   const classes = classNames("Cell", { stamped: stamped });
 
   const htmlSoftHyphen = "&shy;";
@@ -13,7 +13,7 @@ const Cell: React.FC<CellProps> = ({ word, stamped, toggleStamped }) => {
 
   return (
     <td role="gridcell" className={classes} onClick={toggleStamped}>
-      {normalise(word)}
+      {normalise(prompt)}
     </td>
   );
 };

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import type { MouseEvent } from 'react'
+import useSession from './lib/useSession'
+import Grid from './components/grid/Grid'
 import { InfoModal } from './components/modals/InfoModal'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
@@ -23,7 +25,7 @@ import { Navbar } from './components/navbar/Navbar'
 type ClickHandler<T> = (event: MouseEvent<T>) => void;
 type CellClickHandler = ClickHandler<HTMLTableDataCellElement>;
 export type ButtonClickHandler = ClickHandler<HTMLButtonElement>;
-export type CellData = { word: string; stamped: boolean };
+export type CellData = { prompt: string; stamped: boolean };
 export type CellProps = CellData & { toggleStamped: CellClickHandler };
 
 function App() {
@@ -79,6 +81,51 @@ function App() {
         setStoredIsHighContrastMode(isHighContrast)
     }
 
+    const newCellDataList = function (): CellData[] {
+        return PROMPTS().map((prompt) => {
+            return { prompt: prompt, stamped: false };
+        });
+    };
+
+    const [cellDataList, setCellDataList] =
+        useSession<CellData[]>(newCellDataList);
+
+    const setStamped = (index: number, stamped: boolean): void => {
+        setCellDataList(
+            cellDataList.map((cellData, cellDataIndex) => {
+                if (index === cellDataIndex) {
+                    return { ...cellData, stamped: stamped };
+                } else {
+                    return cellData;
+                }
+            })
+        );
+    };
+
+    const toggleStampedForIndex = function (
+        index: number,
+        stamped: boolean
+    ): CellClickHandler {
+        return () => {
+            setStamped(index, !stamped);
+        };
+    };
+
+    const cellPropsList: CellProps[] = cellDataList.map((cellData, index) => ({
+        ...cellData,
+        toggleStamped: toggleStampedForIndex(index, cellData.stamped),
+    }));
+
+    const setNewWords: ButtonClickHandler = () => {
+        setCellDataList(newCellDataList());
+    };
+
+    const clearAllCells: ButtonClickHandler = () => {
+        setCellDataList(
+            cellDataList.map((cellData) => ({ ...cellData, stamped: false }))
+        );
+    };
+
     return (
         <div className="h-screen flex flex-col">
             <Navbar
@@ -88,6 +135,7 @@ function App() {
             <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
                 <div className="pb-6 grow">
                     {/* Insert grid here */}
+                    <Grid cellPropsList={cellPropsList} />
                 </div>
                 <InfoModal
                     isOpen={isInfoModalOpen}
