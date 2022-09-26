@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import type { MouseEvent } from 'react'
 import { InfoModal } from './components/modals/InfoModal'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
@@ -12,11 +13,18 @@ import {
     WELCOME_INFO_MODAL_MS,
     DISCOURAGE_INAPP_BROWSERS,
 } from './constants/settings'
+import { PROMPTS } from './constants/prompts'
 
 import './App.css';
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
+
+type ClickHandler<T> = (event: MouseEvent<T>) => void;
+type CellClickHandler = ClickHandler<HTMLTableDataCellElement>;
+export type ButtonClickHandler = ClickHandler<HTMLButtonElement>;
+export type CellData = { word: string; stamped: boolean };
+export type CellProps = CellData & { toggleStamped: CellClickHandler };
 
 function App() {
     const prefersDarkMode = window.matchMedia(
