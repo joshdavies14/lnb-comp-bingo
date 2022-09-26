@@ -7,5 +7,6 @@
   }
   
   .cell.stamped {
-    background-color: lightblue;
+    @apply bg-indigo-600;
+    @apply text-white
   }
