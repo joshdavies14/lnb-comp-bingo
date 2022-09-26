@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { InfoModal } from './components/modals/InfoModal'
+import { SettingsModal } from './components/modals/SettingsModal'
 import {
     loadGameStateFromLocalStorage,
     saveGameStateToLocalStorage,
@@ -23,6 +24,7 @@ function App() {
     ).matches
 
     const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+    const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
 
     const [isDarkMode, setIsDarkMode] = useState(
         localStorage.getItem('theme')
@@ -64,10 +66,16 @@ function App() {
         localStorage.setItem('theme', isDark ? 'dark' : 'light')
     }
 
+    const handleHighContrastMode = (isHighContrast: boolean) => {
+        setIsHighContrastMode(isHighContrast)
+        setStoredIsHighContrastMode(isHighContrast)
+    }
+
     return (
         <div className="h-screen flex flex-col">
             <Navbar
                 setIsInfoModalOpen={setIsInfoModalOpen}
+                setIsSettingsModalOpen={setIsSettingsModalOpen}
             />
             <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
                 <div className="pb-6 grow">
@@ -76,6 +84,14 @@ function App() {
                 <InfoModal
                     isOpen={isInfoModalOpen}
                     handleClose={() => setIsInfoModalOpen(false)}
+                />
+                <SettingsModal
+                    isOpen={isSettingsModalOpen}
+                    handleClose={() => setIsSettingsModalOpen(false)}
+                    isDarkMode={isDarkMode}
+                    handleDarkMode={handleDarkMode}
+                    isHighContrastMode={isHighContrastMode}
+                    handleHighContrastMode={handleHighContrastMode}
                 />
                 <AlertContainer />
             </div>

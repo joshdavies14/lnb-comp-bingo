@@ -6,10 +6,12 @@ import { GAME_TITLE } from '../../constants/strings'
 
 type Props = {
     setIsInfoModalOpen: (value: boolean) => void
+    setIsSettingsModalOpen: (value: boolean) => void
 }
 
 export const Navbar = ({
     setIsInfoModalOpen,
+    setIsSettingsModalOpen,
 }: Props) => {
     return (
         <div className="navbar">
