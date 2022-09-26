@@ -8,7 +8,7 @@ import {
     WIN_MESSAGES,
     GAME_COPIED_MESSAGE,
     DISCOURAGE_INAPP_BROWSER_TEXT,
-  } from './constants/strings'
+} from './constants/strings'
 import {
     loadGameStateFromLocalStorage,
     saveGameStateToLocalStorage,
@@ -26,6 +26,7 @@ import './App.css';
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
+import ActionButton from './components/grid/ActionButton'
 import { isInAppBrowser } from './lib/browser'
 
 type ClickHandler<T> = (event: MouseEvent<T>) => void;
@@ -152,6 +153,16 @@ function App() {
             <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
                 <div className="pb-6 grow">
                     {/* Insert grid here */}
+                    <ActionButton
+                        text="New card"
+                        onClick={setNewWords}
+                        activeDuration={100}
+                    />
+                    <ActionButton
+                        text="Clear"
+                        onClick={clearAllCells}
+                        activeDuration={100}
+                    />
                     <Grid cellPropsList={cellPropsList} />
                 </div>
                 <InfoModal
