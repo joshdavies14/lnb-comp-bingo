@@ -1,21 +1,21 @@
-import { useState, useEffect, useMemo } from "react";
-import GuaranteedJsonSession from "./GuaranteedJsonSession";
+import { useState, useEffect, useMemo } from 'react'
+import GuaranteedJsonSession from './GuaranteedJsonSession'
 
-type GetterSetter<T> = [T, (data: T) => void];
+type GetterSetter<T> = [T, (data: T) => void]
 
 const useSession = function <T>(initialData: () => T): GetterSetter<T> {
   const session = useMemo(
     () => new GuaranteedJsonSession<T>(initialData),
     [initialData]
-  );
+  )
 
-  const [data, setData] = useState<T>(session.sessionData);
+  const [data, setData] = useState<T>(session.sessionData)
 
   useEffect(() => {
-    session.sessionData = data;
-  }, [session, data]);
+    session.sessionData = data
+  }, [session, data])
 
-  return [data, setData];
-};
+  return [data, setData]
+}
 
-export default useSession;
+export default useSession

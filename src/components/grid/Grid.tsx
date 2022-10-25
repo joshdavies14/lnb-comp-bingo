@@ -1,11 +1,11 @@
-import React from "react";
-import "./Grid.css";
-import Cell from "./Cell";
-import { CellProps } from "../../App";
-import chunk from "lodash/chunk";
+import React from 'react'
+import './Grid.css'
+import Cell from './Cell'
+import { CellProps } from '../../App'
+import chunk from 'lodash/chunk'
 
 const Grid: React.FC<{ cellPropsList: CellProps[] }> = ({ cellPropsList }) => {
-  const chunked = chunk(cellPropsList, 5);
+  const chunked = chunk(cellPropsList, 5)
 
   return (
     <table className="Grid" role="grid">
@@ -15,8 +15,8 @@ const Grid: React.FC<{ cellPropsList: CellProps[] }> = ({ cellPropsList }) => {
         ))}
       </tbody>
     </table>
-  );
-};
+  )
+}
 
 const Row: React.FC<{ cellPropsList: CellProps[] }> = ({ cellPropsList }) => {
   return (
@@ -30,7 +30,7 @@ const Row: React.FC<{ cellPropsList: CellProps[] }> = ({ cellPropsList }) => {
         />
       ))}
     </tr>
-  );
-};
+  )
+}
 
-export default Grid;
+export default Grid
