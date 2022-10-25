@@ -42,6 +42,7 @@ export const PROMPTS_LIST = [
     'Someone gets hit in the head',
     'Warwick team final in Team Match',
     'The Macarena comes on',
+    'Lottie forgets the camera',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25);
