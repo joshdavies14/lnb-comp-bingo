@@ -10,14 +10,10 @@ import {
   DISCOURAGE_INAPP_BROWSER_TEXT,
 } from './constants/strings'
 import {
-  loadGameStateFromLocalStorage,
-  saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
 import {
-  REVEAL_TIME_MS,
-  WELCOME_INFO_MODAL_MS,
   DISCOURAGE_INAPP_BROWSERS,
 } from './constants/settings'
 import { PROMPTS } from './constants/prompts'
@@ -50,22 +46,10 @@ function App() {
     localStorage.getItem('theme')
       ? localStorage.getItem('theme') === 'dark'
       : prefersDarkMode
-      ? true
-      : false
   )
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
-
-  /* useEffect(() => {
-        // if no game state on load,
-        // show the user the how-to info modal
-        if (!loadGameStateFromLocalStorage()) {
-            setTimeout(() => {
-                setIsInfoModalOpen(true)
-            }, WELCOME_INFO_MODAL_MS)
-        }
-    }) */
 
   useEffect(() => {
     DISCOURAGE_INAPP_BROWSERS &&
@@ -145,10 +129,6 @@ function App() {
     )
   }
 
-  const copyToClipboard: ButtonClickHandler = () => {
-    window.navigator.clipboard.writeText(shareGrid(cellDataList))
-  }
-
   return (
     <div className="h-screen flex flex-col">
       <Navbar
@@ -171,9 +151,6 @@ function App() {
               activeDuration={100}
             />
           </div>
-
-          {/* Insert grid here */}
-
           <Grid cellPropsList={cellPropsList} />
         </div>
         <InfoModal
