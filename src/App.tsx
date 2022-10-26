@@ -28,6 +28,7 @@ import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 import ActionButton from './components/grid/ActionButton'
 import { isInAppBrowser } from './lib/browser'
+import shareGrid from "./lib/shareGrid";
 
 type ClickHandler<T> = (event: MouseEvent<T>) => void
 type CellClickHandler = ClickHandler<HTMLTableDataCellElement>
@@ -144,11 +145,16 @@ function App() {
     )
   }
 
+  const copyToClipboard: ButtonClickHandler = () => {
+      window.navigator.clipboard.writeText(shareGrid(cellDataList));
+  }
+
   return (
     <div className="h-screen flex flex-col">
       <Navbar
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
+        cellDataList={cellDataList}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6 grow">
