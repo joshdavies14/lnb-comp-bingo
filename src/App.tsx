@@ -13,9 +13,7 @@ import {
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
-import {
-  DISCOURAGE_INAPP_BROWSERS,
-} from './constants/settings'
+import { DISCOURAGE_INAPP_BROWSERS } from './constants/settings'
 import { PROMPTS } from './constants/prompts'
 
 import './App.css'

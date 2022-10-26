@@ -5,7 +5,7 @@ const shareGrid = function (cellDataList: CellData[]): string {
   const emojiList = cellDataList.map(({ stamped }) => (stamped ? '🟦' : '⬜'))
 
   const stampedCount = cellDataList.filter((cell) => {
-    return cell.stamped;
+    return cell.stamped
   }).length
 
   const emojiRows = chunk(emojiList, 5).map((row) => row.join(''))
