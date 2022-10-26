@@ -28,7 +28,7 @@ import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 import ActionButton from './components/grid/ActionButton'
 import { isInAppBrowser } from './lib/browser'
-import shareGrid from "./lib/shareGrid";
+import shareGrid from './lib/shareGrid'
 
 type ClickHandler<T> = (event: MouseEvent<T>) => void
 type CellClickHandler = ClickHandler<HTMLTableDataCellElement>
@@ -146,7 +146,7 @@ function App() {
   }
 
   const copyToClipboard: ButtonClickHandler = () => {
-      window.navigator.clipboard.writeText(shareGrid(cellDataList));
+    window.navigator.clipboard.writeText(shareGrid(cellDataList))
   }
 
   return (
