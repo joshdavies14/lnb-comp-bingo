@@ -3,7 +3,7 @@ import {
   InformationCircleIcon,
   ShareIcon,
 } from '@heroicons/react/outline'
-import { GAME_TITLE } from '../../constants/strings'
+import { GAME_TITLE, GAME_COPIED_MESSAGE } from '../../constants/strings'
 import shareGrid from '../../lib/shareGrid'
 import { CellData } from '../../App'
 
@@ -11,6 +11,7 @@ type Props = {
   setIsInfoModalOpen: (value: boolean) => void
   setIsSettingsModalOpen: (value: boolean) => void
   cellDataList: CellData[]
+  showSuccessAlert: (message: string) => void
 }
 
 const copyToClipboard = (cellDataList: CellData[]) => (event: any) => {
@@ -21,6 +22,7 @@ export const Navbar = ({
   setIsInfoModalOpen,
   setIsSettingsModalOpen,
   cellDataList,
+  showSuccessAlert,
 }: Props) => {
   return (
     <div className="navbar">
@@ -33,7 +35,10 @@ export const Navbar = ({
         <div className="right-icons">
           <ShareIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"
-            onClick={copyToClipboard(cellDataList)}
+            onClick={() => {
+              copyToClipboard(cellDataList)
+              showSuccessAlert(GAME_COPIED_MESSAGE)
+            }}
           />
           <CogIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"

@@ -155,6 +155,7 @@ function App() {
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
         cellDataList={cellDataList}
+        showSuccessAlert={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6 grow">
