@@ -45,6 +45,14 @@ export const PROMPTS_LIST = [
   'Lottie forgets the camera',
   'Charlotte gets asked for safety pins',
   'Someone attempts the alternative version of the Macarena',
+  'Charlotte/Becca get asked to do hair',
+  'Pit stop at Maccies',
+  'Maccies is closed :(',
+  'Serena and Josh fall asleep at the back of the coach',
+  'TEAM PHOTO!!!',
+  'Warwick Bear pulls',
+  'Someone comments on the shark',
+  "Serena comes straight from the airport (don't ask)",
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
