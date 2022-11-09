@@ -53,6 +53,9 @@ export const PROMPTS_LIST = [
   'Warwick Bear pulls',
   'Someone comments on the shark',
   "Serena comes straight from the airport (don't ask)",
+  "Jess is mentioned",
+  "Mark is here!",
+  "BROWNIES!",
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
