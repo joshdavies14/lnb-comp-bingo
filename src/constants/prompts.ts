@@ -50,12 +50,16 @@ export const PROMPTS_LIST = [
   'Maccies is closed :(',
   'Serena and Josh fall asleep at the back of the coach',
   'TEAM PHOTO!!!',
-  'Warwick Bear pulls',
   'Someone comments on the shark',
   "Serena comes straight from the airport (don't ask)",
   'Jess is mentioned',
   'Mark is here!',
   'BROWNIES!',
+  'Becca complains about Warwick Bear',
+  'Serena becomes obsessed with the shark',
+  'It\'s tiring being a TC (Josh lies down on the floor)',
+  'Becca knocks over her water bottle',
+  'Josh says "Everything will be fine!"',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
