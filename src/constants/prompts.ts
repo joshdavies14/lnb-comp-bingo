@@ -57,7 +57,7 @@ export const PROMPTS_LIST = [
   'BROWNIES!',
   'Becca complains about Warwick Bear',
   'Serena becomes obsessed with the shark',
-  'It\'s tiring being a TC (Josh lies down on the floor)',
+  "It's tiring being a TC (Josh lies down on the floor)",
   'Becca knocks over her water bottle',
   'Josh says "Everything will be fine!"',
 ]
