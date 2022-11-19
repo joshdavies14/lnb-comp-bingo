@@ -21,7 +21,6 @@ export const PROMPTS_LIST = [
   'Paso leap alert',
   'Couple out of time in cha',
   "Judges don't move for a whole round of Latin",
-  'Dan pulls a tango face',
   'Charlotte goes oooh while dancing',
   "Josh doesn't smile",
   'Harry gets out the M&Ms',
