@@ -59,6 +59,12 @@ export const PROMPTS_LIST = [
   "It's tiring being a TC (Josh lies down on the floor)",
   'Becca knocks over her water bottle',
   'Josh says "Everything will be fine!"',
+  'Josh says "Lizzzzzz"',
+  'Someone loses something',
+  'Josh sounds fed up',
+  'Someone gets first-rounded',
+  'Someone gets knocked out too early',
+  'B team beats A team',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
