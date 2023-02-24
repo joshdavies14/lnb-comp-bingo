@@ -72,6 +72,12 @@ export const PROMPTS_LIST = [
   'Someone is danger dancing',
   'Did you know Becca went to Sheffield?',
   'Someone asks for a timetable',
+  'Serena and Abi do the chant',
+  'Someone mentiones the chocolate huel and vodka incident',
+  'Someone oversleeps',
+  "Someone doesn't make it to Revs",
+  'Someone is too hungover for Sunday breakfast',
+  'Drinking on the coach',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
