@@ -75,8 +75,6 @@ export const PROMPTS_LIST = [
   'Serena and Abi do the chant',
   'Someone mentiones the chocolate huel and vodka incident',
   'Someone oversleeps',
-  "Someone doesn't make it to Revs",
-  'Someone is too hungover for Sunday breakfast',
   'Drinking on the coach',
   'Josh looks at work things',
   'Daria forgets she has to dance',
