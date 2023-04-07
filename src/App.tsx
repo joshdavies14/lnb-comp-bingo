@@ -8,10 +8,6 @@ import {
   GAME_COPIED_MESSAGE,
   DISCOURAGE_INAPP_BROWSER_TEXT,
 } from './constants/strings'
-import {
-  setStoredIsHighContrastMode,
-  getStoredIsHighContrastMode,
-} from './lib/localStorage'
 import { DISCOURAGE_INAPP_BROWSERS } from './constants/settings'
 import { PROMPTS } from './constants/prompts'
 
@@ -43,9 +39,6 @@ function App() {
       ? localStorage.getItem('theme') === 'dark'
       : prefersDarkMode
   )
-  const [isHighContrastMode, setIsHighContrastMode] = useState(
-    getStoredIsHighContrastMode()
-  )
 
   useEffect(() => {
     DISCOURAGE_INAPP_BROWSERS &&
@@ -62,22 +55,11 @@ function App() {
     } else {
       document.documentElement.classList.remove('dark')
     }
-
-    if (isHighContrastMode) {
-      document.documentElement.classList.add('high-contrast')
-    } else {
-      document.documentElement.classList.remove('high-contrast')
-    }
-  }, [isDarkMode, isHighContrastMode])
+  }, [isDarkMode])
 
   const handleDarkMode = (isDark: boolean) => {
     setIsDarkMode(isDark)
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
-  }
-
-  const handleHighContrastMode = (isHighContrast: boolean) => {
-    setIsHighContrastMode(isHighContrast)
-    setStoredIsHighContrastMode(isHighContrast)
   }
 
   const newCellDataList = function (): CellData[] {
@@ -158,8 +140,6 @@ function App() {
           handleClose={() => setIsSettingsModalOpen(false)}
           isDarkMode={isDarkMode}
           handleDarkMode={handleDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          handleHighContrastMode={handleHighContrastMode}
         />
         <AlertContainer />
       </div>

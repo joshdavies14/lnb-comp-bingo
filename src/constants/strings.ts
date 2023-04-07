@@ -9,6 +9,5 @@ export const WIN_MESSAGES = [
   'And recalled to the next round: you!',
 ]
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
-export const HIGH_CONTRAST_MODE_DESCRIPTION = 'For improved color vision'
 export const DISCOURAGE_INAPP_BROWSER_TEXT =
   "You are using an embedded browser and may experience problems sharing or saving your results. Try using your device's default browser instead."
