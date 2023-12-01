@@ -91,6 +91,7 @@ export const PROMPTS_LIST = [
   'Emily loses her phone',
   'Josh gets concerned at something Mark says',
   'Josh is sleep deprived',
+  'Alice runs',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
