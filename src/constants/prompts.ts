@@ -98,6 +98,8 @@ export const PROMPTS_LIST = [
   'Row of people doing uni work',
   'Not enough chairs',
   'Tej starts talking to someone from another uni he just happens to know',
+  'Mark is a proud dad',
+  'Tamyla dances with a new partner',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
