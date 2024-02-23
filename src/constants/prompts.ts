@@ -29,11 +29,11 @@ export const PROMPTS_LIST = [
   'Someone is still drunk/very hungover/has not gone to bed from the night before',
   'Cha Cha Slide comes on',
   'Biased judging',
-//  'Team match is dominated by the host uni',
+  //  'Team match is dominated by the host uni',
   'Couple goes the wrong way around the floor',
   'Warwick couple makes a final (get in there!!)',
   'A team does coordinated dancing on the sidelines',
-//  'Gary Foster is present',
+  //  'Gary Foster is present',
   'Two Warwick couples crash',
   'Bristol are really loud',
   "Someone's number falls off",
@@ -104,6 +104,7 @@ export const PROMPTS_LIST = [
   'Fran gets excited about trams',
   'Tom looks like he really wants to be here',
   "All three Alice's/Alys' respond to their name",
+  'Fran has energy no one else has',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
