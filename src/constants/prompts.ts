@@ -107,6 +107,8 @@ export const PROMPTS_LIST = [
   'Emily and Josh start attacking each other',
   'Why do we have sharks?',
   'Fran tells us a story',
+  'Josh and Tom are grandpas',
+  'Camera gets lost',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
