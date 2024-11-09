@@ -45,7 +45,7 @@ export const PROMPTS_LIST = [
   'Someone attempts the alternative version of the Macarena',
   'Pit stop at Maccies',
   'Maccies is closed :(',
-  'Serena or Josh fall asleep at the back of the coach',
+  // 'Serena or Josh fall asleep at the back of the coach',
   'TEAM PHOTO!!!',
   'Mark is here!',
   'Jayne is here!',
@@ -102,9 +102,11 @@ export const PROMPTS_LIST = [
   'Someone gets lost',
   'Fran gets excited about trams',
   'Tom looks like he really wants to be here',
-  "All three Alice's/Alys' respond to their name",
+  "All the Alice's/Alys' respond to their name",
   'Fran has energy no one else has',
   'Emily and Josh start attacking each other',
+  'Why do we have sharks?',
+  'Fran tells us a story',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
