@@ -109,6 +109,11 @@ export const PROMPTS_LIST = [
   'Fran tells us a story',
   'Josh and Tom are grandpas',
   'Camera gets lost',
+  'Tom/Josh get excited over which service station we stop at',
+  // 'Daria, Josh, Claire, Alys and Em cause utter chaos that makes no sense',
+  'Fran starts eating her dinner super early',
+  'Everyone starts crying before midday',
+  // 'Nelson Gingerpears rocks up'
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
