@@ -66,6 +66,13 @@ export const PROMPTS_LIST = [
   'Camera gets lost',
   // 'Tom/Josh get excited over which service station we stop at',
   'Everyone starts crying before midday',
+  "Ciara claims it's international women's day",
+  'Georgina tells Jess not to run off',
+  'Someone thinks Jess has vanished',
+  'Former TC expresses gratitude that they are no longer TC',
+  'Former TC gets asked TC questions',
+  'Jess says she wants to do acro rock and roll',
+  'Joe bakes',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
