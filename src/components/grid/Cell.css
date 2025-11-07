@@ -4,9 +4,10 @@
   border: 1px solid;
   vertical-align: middle;
   overflow-wrap: break-word;
+  @apply border-gray-200 dark:border-white/10;
 }
 
 .cell.stamped {
   @apply bg-red-600;
-  @apply text-white;
+  @apply text-white font-medium;
 }

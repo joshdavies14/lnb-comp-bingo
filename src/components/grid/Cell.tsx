@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { CellProps } from '../../App'
 
 const Cell: React.FC<CellProps> = ({ prompt, stamped, toggleStamped }) => {
-  const classes = classNames('cell text-lg ml-2.5 dark:text-white', {
+  const classes = classNames('cell text-lg ml-2.5 dark:text-white hover:cursor-pointer', {
     stamped: stamped,
   })
 
