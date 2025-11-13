@@ -62,7 +62,7 @@ export const PROMPTS_LIST = [
   'Someone gets lost',
   'Emily and Josh start attacking each other',
   'Why do we have sharks?',
-  // 'Josh and Tom are grandpas',
+  'Josh and Tom are grandpas',
   'Camera gets lost',
   // 'Tom/Josh get excited over which service station we stop at',
   'Everyone starts crying before midday',
@@ -73,6 +73,7 @@ export const PROMPTS_LIST = [
   'Former TC gets asked TC questions',
   'Jess says she wants to do acro rock and roll',
   'Joe bakes',
+  'Lindsay vibes with the sharks',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
