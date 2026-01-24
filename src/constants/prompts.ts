@@ -72,7 +72,7 @@ export const PROMPTS_LIST = [
   'Former TC expresses gratitude that they are no longer TC',
   'Former TC gets asked TC questions',
   'Jess says she wants to do acro rock and roll',
-  'Joe bakes',
+  // 'Joe bakes',
   'Lindsay vibes with the sharks',
   'Kate says "6 7"',
   'Celia wanders off',
