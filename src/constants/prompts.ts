@@ -26,7 +26,7 @@ export const PROMPTS_LIST = [
   'Couple goes the wrong way around the floor',
   'Warwick couple makes a final (get in there!!)',
   'A team does coordinated dancing on the sidelines',
-  'Gary Foster is present',
+  // 'Gary Foster is present',
   'Two Warwick couples crash',
   "Someone's number falls off",
   'Someone gets hit in the head',
@@ -67,13 +67,16 @@ export const PROMPTS_LIST = [
   // 'Tom/Josh get excited over which service station we stop at',
   'Everyone starts crying before midday',
   "Ciara claims it's international women's day",
-  'Georgina tells Jess not to run off',
+  // 'Georgina tells Jess not to run off',
   'Someone thinks Jess has vanished',
   'Former TC expresses gratitude that they are no longer TC',
   'Former TC gets asked TC questions',
   'Jess says she wants to do acro rock and roll',
   'Joe bakes',
   'Lindsay vibes with the sharks',
+  'Kate says "6 7"',
+  'Celia wanders off',
+  'Ivanna screams',
 ]
 
 export const PROMPTS = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
