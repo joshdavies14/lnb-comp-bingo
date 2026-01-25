@@ -7,8 +7,9 @@ import Grid from "@/components/Grid";
 import { CellProps} from "@/models/CellProps";
 import { CellClickHandler, ButtonClickHandler } from "@/models/ClickHandler";
 import shareGrid from "@/utils/shareGrid";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+const Home = () => {
   const newCellDataList = function (): CellData[] {
     return prompts().map((prompt) => {
       return { prompt: prompt, toggled: false }
@@ -81,3 +82,8 @@ export default function Home() {
     </div>
   );
 }
+
+export default dynamic(
+    () => Promise.resolve(Home),
+    { ssr: false }
+);
