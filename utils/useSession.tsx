@@ -14,6 +14,7 @@ const useSession = function <T>(initialData: () => T): GetterSetter<T> {
     const [data, setData] = useState<T>(session.sessionData)
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/immutability
         session.sessionData = data
     }, [session, data])
 
