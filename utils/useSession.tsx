@@ -1,0 +1,24 @@
+'use client'
+
+import { useState, useEffect, useMemo } from 'react'
+import GuaranteedJsonSession from './GuaranteedJsonSession'
+
+type GetterSetter<T> = [T, (data: T) => void]
+
+const useSession = function <T>(initialData: () => T): GetterSetter<T> {
+    const session = useMemo(
+        () => new GuaranteedJsonSession<T>(initialData),
+        [initialData]
+    )
+
+    const [data, setData] = useState<T>(session.sessionData)
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/immutability
+        session.sessionData = data
+    }, [session, data])
+
+    return [data, setData]
+}
+
+export default useSession
