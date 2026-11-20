@@ -55,22 +55,22 @@ const Home = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black dark:text-white">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-gray-950 dark:text-white">
       <nav className="border-b border-gray-200 dark:border-white/10 w-full p-4 flex justify-between items-center">
-        <h1 className="text-xl lg:text-2xl font-semibold leading-tight text-gray-900 dark:text-white">Competition Bingo</h1>
+        <h1 className="text-xl lg:text-2xl font-bold leading-tight text-gray-900 dark:text-white">Competition Bingo</h1>
         <div className="flex items-center justify-between gap-x-4">
           <a href="#" className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" onClick={() => shareGrid(cellDataList)}>
             Share
           </a>
         </div>
       </nav>
-      <main className="m-auto flex grow w-full flex-col items-center justify-center py-8 px-4 md:px-8 xl:px-16 bg-white dark:bg-black sm:items-start">
+      <main className="m-auto flex grow w-full flex-col items-center justify-center py-8 px-4 md:px-8 xl:px-16 bg-white dark:bg-gray-950 sm:items-start">
         <div className="mx-auto grow flex w-full max-w-7xl flex-1 flex-col items-center text-center sm:items-start gap-y-8">
           <div className="flex w-full max-w-7xl items-center justify-center text-center gap-x-4">
-            <button className="rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700 w-full grow" onClick={setNewWords}>
+            <button className="rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700 w-full grow font-medium" onClick={setNewWords}>
               New card
             </button>
-            <button className="rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700 w-full grow" onClick={clearAllCells}>
+            <button className="rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700 w-full grow font-medium" onClick={clearAllCells}>
               Clear
             </button>
           </div>
