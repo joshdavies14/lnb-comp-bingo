@@ -15,7 +15,7 @@ export const PROMPTS_LIST = [
     'Someone is dancing way below their category',
     // 'Oxford/Durham/Cambridge in the final',
     // 'Durham formation team in the final',
-    // 'A team gets their pom poms out',
+    'A team gets their pom poms out',
     'C or below team makes team match final',
     'Quickstep crash',
     'Paso leap alert',
@@ -75,7 +75,9 @@ export const PROMPTS_LIST = [
     // 'Phoebe gets drunk',
     'Someone gets asked for safety pins',
     // 'Beginners do open quickstep in team match',
-    'Comp brownies!!'
+    'Comp brownies!!',
+    'Reach plays',
+    'Jamie is a performative feminist',
 ]
 
 export const prompts = (): string[] => shuffle(PROMPTS_LIST).slice(0, 25)
